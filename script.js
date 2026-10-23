@@ -6,84 +6,70 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "O carro em que você e seus amigos estavam quebra no meio de uma estrada deserta cercada por uma floresta escura. O sinal do celular sumiu. O que você faz primeiro?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: [
-                    "No inicio ficou com medo do que essa tecnologia pode fazer."
-                ]
+                texto: "Sugerir que todos fiquem juntos dentro do carro até o amanhecer.",
+                afirmacao: "Você agiu com prudência e preferiu a segurança do grupo."
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: [ 
-                    "Quis saber como usar a IA no dia a dia."
-            }           
-            
-        ]
-    },
-    {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial (IA), uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre elaIA. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de tecnologia em sala de aula. Qual atitude você toma?",
-        alternativas: [
-            {
-                texto:"Utilizar uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento",
-                afirmacao:
-                    [ "Conseguiu utilizar a IA para buscar informações uteis."
-                     " Percebeu que a ia pode ajudar em informações básicas do dia a dia"
-                     ]
-            },
-            {
-                texto: "Escrever o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao:
-                    [ "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
-                     " Achou que era muito mais facil procurar por respostas com IA."
-                     ]
+                texto: "Pegar uma lanterna e ir sozinho procurar ajuda na floresta.",
+                afirmacao: "Sua coragem — ou imprudência — o levou direto para o perigo."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Enquanto decidem o que fazer, vocês ouvem um barulho estranho vindo de uma cabana abandonada a poucos metros da estrada. Qual a sua reação?",
         alternativas: [
             {
-                texto:"Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao:"afirmacao"
+                texto: "Ignorar o barulho e trancar as portas do veículo.",
+                afirmacao: "Manteve a cabeça fria e evitou investigar o desconhecido."
             },
             {
-                texto:"Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao:"afirmacao"
+                texto: "Caminhar até a cabana para ver se há alguém que possa ajudar.",
+                afirmacao: "Sua curiosidade falou mais alto do que o seu instinto de sobrevivência."
             }
-            
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Na cabana, uma porta se tranca sozinha e as luzes começam a piscar. Uma figura mascarada surge no fim do corredor. Como você se posiciona?",
         alternativas: [
             {
-                texto:"Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao:"afirmacao"
+                texto: "Procura imediatamente algo afiado para se defender e encara a ameaça.",
+                afirmacao: "Decidiu lutar com todas as forças pela sua vida."
             },
             {
-                texto:"Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao:"afirmacao"
+                texto: "Corre para a janela mais próxima e pula sem olhar para trás.",
+                afirmacao: "Priorizou a fuga rápida para garantir sua integridade."
             }
-            
         ]
     },
     {
-        enunciado: " Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda de uma IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz?",
+        enunciado: "Ao escapar para o pátio, você encontra uma chave no chão perto de uma caminhonete antiga. O que você faz?",
         alternativas: [
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao:"afirmacao"
+                texto: "Tenta ligar a caminhonete rapidamente para fugir daquele lugar.",
+                afirmacao: "Apostou tudo em um veículo antigo para uma fuga rápida."
             },
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao:"afirmacao"
+                texto: "Esconde-se nos arbustos até ter certeza de que o caminho está livre.",
+                afirmacao: "Preferiu o sigilo e a paciência para analisar a situação."
             }
-            
-            
         ]
     },
+    {
+        enunciado: "Um dos seus amigos tropeça e pede ajuda enquanto a figura sombria se aproxima. Qual é a sua decisão final?",
+        alternativas: [
+            {
+                texto: "Volta para resgatar seu amigo, arriscando a própria vida.",
+                afirmacao: "Mostrou lealdade inabalável ao resgatar seu companheiro."
+            },
+            {
+                texto: "Continua correndo para salvar a si mesmo antes que seja tarde.",
+                afirmacao: "Colocou sua própria sobrevivência em primeiro lugar."
+            }
+        ]
+    }
 ];
 
 let atual = 0; 
@@ -91,7 +77,7 @@ let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if(atual >= perguntas.length){
+    if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
@@ -101,8 +87,8 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -110,15 +96,15 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacao = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacao + " ";
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
-    caixaPerguntas.textContent = "Em 2049...";
+function mostraResultado() {
+    caixaPerguntas.textContent = "O Amanhecer...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = ""; 
 }
