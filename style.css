@@ -2,7 +2,7 @@
     --cor-fundo: #0a0203;
     --cor-principal: #1a0508;
     --cor-secundaria: #330a10; 
-    --cor-destaque: #8b0000; /* Vermelho Vinho / Sangue */
+    --cor-destaque: #8b0000;
     --cor-texto: #f5e6e8;
 }
 
@@ -34,10 +34,16 @@ h1 {
     letter-spacing: 1px;
 }
 
+.caixa-perguntas {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
 .caixa-alternativas {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     margin-top: 15px;
 }
 
